@@ -104,6 +104,25 @@
             text-align: center;
             font-size: 0.9em;
         }
+        /* Music Button */
+        .music-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #66fcf1;
+            color: #0b0c10;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
+        .music-button:hover {
+            background-color: #45a29e;
+            transform: scale(1.1);
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -112,10 +131,13 @@
 </head>
 <body>
     <!-- Music -->
-    <audio autoplay loop>
+    <audio id="background-music" loop>
         <source src="(FIFA 14) John Newman - Love Me Again.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <!-- Music Button -->
+    <button class="music-button" onclick="toggleMusic()">Song</button>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -152,5 +174,20 @@
     <footer>
         <p>&copy; 2024 NLA 25. All Rights Reserved. Stay connected for more updates!</p>
     </footer>
+
+    <script>
+        const music = document.getElementById('background-music');
+        let isPlaying = true;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                isPlaying = false;
+            } else {
+                music.play();
+                isPlaying = true;
+            }
+        }
+    </script>
 </body>
 </html>
