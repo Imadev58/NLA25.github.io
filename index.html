@@ -119,6 +119,9 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             z-index: 1000;
         }
+        .music-button.hidden {
+            display: none;
+        }
         .music-button:hover {
             background-color: #45a29e;
             transform: scale(1.1);
@@ -131,13 +134,13 @@
 </head>
 <body>
     <!-- Music -->
-    <audio id="background-music" loop>
+    <audio id="background-music" autoplay loop>
         <source src="(FIFA 14) John Newman - Love Me Again.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <!-- Music Button -->
-    <button class="music-button" onclick="toggleMusic()">Song</button>
+    <button id="music-button" class="music-button hidden" onclick="toggleMusic()">Song</button>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -177,17 +180,25 @@
 
     <script>
         const music = document.getElementById('background-music');
+        const musicButton = document.getElementById('music-button');
         let isPlaying = true;
 
         function toggleMusic() {
             if (isPlaying) {
                 music.pause();
+                musicButton.textContent = 'Play';
                 isPlaying = false;
             } else {
                 music.play();
+                musicButton.textContent = 'Pause';
                 isPlaying = true;
             }
         }
+
+        // Automatically play music on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            music.play();
+        });
     </script>
 </body>
 </html>
