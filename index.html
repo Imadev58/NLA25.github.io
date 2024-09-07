@@ -5,189 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NLA 25 - Realistic Football Game on Roblox</title>
     <style>
-        /* Reset and basic styling */
-        * {
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
+            background-color: #0b0c10;
             color: #fff;
             overflow-x: hidden;
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        h1, h2, h3 {
-            font-weight: 600;
-        }
-
-        p {
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        button {
-            padding: 12px 30px;
-            font-size: 1.2rem;
-            border: none;
-            cursor: pointer;
-            background-color: #03DAC6;
-            color: #121212;
-            border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 15px 30px rgba(3, 218, 198, 0.4);
-        }
-
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://example.com/football-field.jpg'); /* Replace with actual image URL */
+            background-image: url('https://example.com/football-field.jpg'); /* Replace with your image */
             background-size: cover;
             background-position: center;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            color: #03DAC6;
-            text-transform: uppercase;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            color: #c5c6c7;
-        }
-
-        /* Feature Section */
-        .features {
-            padding: 60px 20px;
-            background-color: #1f1f1f;
+            height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
+            position: relative;
+            animation: fadeIn 2s ease-in;
         }
-
-        .features h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #03DAC6;
-        }
-
-        .feature-box {
-            width: 100%;
-            max-width: 900px;
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: #2a2a2a;
-            border-radius: 20px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .feature-box h3 {
-            font-size: 1.8rem;
-            color: #03DAC6;
-            margin-bottom: 10px;
-        }
-
-        .feature-box p {
-            font-size: 1.1rem;
-            color: #c5c6c7;
-        }
-
-        /* Affordable Section */
-        .affordable {
-            padding: 60px 20px;
-            background-color: #121212;
+        .hero h1 {
+            font-size: 5em;
             color: #fff;
+            margin: 0;
+            text-shadow: 2px 2px 8px #000;
         }
-
-        .affordable h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #03DAC6;
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #66fcf1;
         }
-
-        .affordable p {
-            font-size: 1.2rem;
+        .hero button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #1f2833;
+            color: #66fcf1;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .hero button:hover {
+            transform: scale(1.1);
+            background-color: #45a29e;
+        }
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background-color: #1f2833;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 3em;
+            color: #66fcf1;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        .feature-box {
+            margin-bottom: 50px;
+        }
+        .feature-box h3 {
+            font-size: 2em;
+            color: #45a29e;
             margin-bottom: 20px;
+        }
+        .feature-box p {
+            font-size: 1.2em;
             color: #c5c6c7;
-            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
+        /* Update Section */
+        .update-section {
+            background-color: #0b0c10;
+            padding: 50px 20px;
+            color: #fff;
+            text-align: center;
+        }
+        .update-section h2 {
+            font-size: 2.5em;
+            color: #66fcf1;
+        }
+        .update-section p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.2em;
+            color: #c5c6c7;
+        }
         /* Footer */
         footer {
             padding: 30px;
-            background-color: #1f1f1f;
-            text-align: center;
+            background-color: #0b0c10;
             color: #c5c6c7;
+            text-align: center;
+            font-size: 0.9em;
         }
-
-        footer p {
-            font-size: 0.9rem;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <!-- Music -->
+    <audio autoplay loop>
+        <source src="giga.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
+    <!-- Hero Section -->
     <section class="hero">
         <h1>NLA 25</h1>
-        <p>The most realistic football experience on Roblox. Coming Soon!</p>
+        <p>The most realistic football experience on Roblox.</p>
         <button>Stay Updated</button>
-        <button>Follow Us</button>
+        <button>Join Us Now</button>
     </section>
 
+    <!-- Features Section -->
     <section class="features">
-        <h2>Why We Created NLA 25</h2>
+        <h2>Game Features</h2>
         <div class="feature-box">
             <h3>Realistic Animations</h3>
-            <p>Experience lifelike player movements, shots, and tackles, with motion-captured animations, just like FIFA or FC24!</p>
+            <p>Feel the difference with motion-captured animations, lifelike player movements, and realistic stadiums.</p>
         </div>
         <div class="feature-box">
-            <h3>Affordable Alternative</h3>
-            <p>We understand not everyone can afford FIFA or FC24, so we’re bringing a realistic football game to Roblox with advanced physics and gameplay.</p>
+            <h3>Frequent Updates</h3>
+            <p>Constant improvements and updates to keep the game fresh, exciting, and more immersive.</p>
         </div>
         <div class="feature-box">
-            <h3>Immersive Gameplay</h3>
-            <p>Dynamic weather, realistic stadiums, and FIFA-level tactical depth for the most authentic football experience.</p>
+            <h3>Free to Play</h3>
+            <p>Play for free with no need for Robux. In-game purchases will be available for extra features.</p>
         </div>
     </section>
 
-    <section class="affordable">
-        <h2>Why It's Free</h2>
-        <p>NLA 25 is absolutely free to play! We believe everyone should have the chance to enjoy a realistic football experience, without spending a dollar. There's no need for Robux or any in-game currency to access the core gameplay.</p>
-        <p>However, if you're looking to enhance your experience, there will be in-game purchases available. But remember, these are completely optional, and you can still enjoy the full game for free!</p>
-        <h2>Platform Availability</h2>
-        <p>For now, NLA 25 will be available on PC and consoles. We are constantly working to improve and expand the game, and we’re considering bringing it to mobile devices soon. Stay tuned for updates! it might not look perfect at the start of its release but it was definitely become perfect after the updates it will have</p>
+    <!-- Update Section -->
+    <section class="update-section">
+        <h2>We're Doing Our Best!</h2>
+        <p>The game might not be perfect at launch, but we are dedicated to delivering the most realistic football experience on Roblox. Stay tuned for frequent updates as we keep improving the gameplay!</p>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 NLA 25. All Rights Reserved. | Join our Roblox group for more updates!</p>
+        <p>&copy; 2024 NLA 25. All Rights Reserved. Stay connected for more updates!</p>
     </footer>
-
 </body>
 </html>
